@@ -53,7 +53,7 @@ namespace PasswordCreator.ViewModels
         /// コンストラクタ
         /// </summary>
         /// <param name="password">編集対象となる行データ</param>
-        public EditViewModel(PasswordItem password)
+        public EditViewModel(PasswordItem password, bool newitem)
         {
             model_    = password;
             SiteName  = password.SiteName;
@@ -62,7 +62,7 @@ namespace PasswordCreator.ViewModels
             Password  = password.Password;
             Category  = password.Category;
             Note      = password.Note;
-            EditMode  = !String.IsNullOrEmpty(password.SiteName);
+            EditMode  = !newitem;
         }
         /// <summary>
         /// デリゲート(View側で処理を登録)
@@ -139,9 +139,9 @@ namespace PasswordCreator.ViewModels
         /// </summary>
         /// <param name="password">編集対象となる行データ</param>
         /// <returns></returns>
-        static public bool ShowDialog(PasswordItem password)
+        static public bool ShowDialog(PasswordItem password, bool newitem)
         {
-            EditViewModel vm = new EditViewModel(password);
+            EditViewModel vm = new EditViewModel(password, newitem);
             EditWindow v = new EditWindow();
             v.DataContext = vm;
             return vm.ShowDialogBox();

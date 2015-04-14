@@ -73,7 +73,7 @@ namespace PasswordCreator.ViewModels
         private void ExecuteAppendCommand()
         {
             PasswordItem password = models_.NewSitePassword(RowItem);
-            if (! EditViewModel.ShowDialog(password)) return;
+            if (! EditViewModel.ShowDialog(password, true)) return;
 
             PasswordItem exists = models_.PickUp(password.SiteName, password.UserId);
             if (exists != null) {
@@ -116,7 +116,7 @@ namespace PasswordCreator.ViewModels
         public void OpenUpdateWindow()
         {
             PasswordItem password = models_.NewSitePassword(RowItem);
-            if (!EditViewModel.ShowDialog(password)) return;
+            if (!EditViewModel.ShowDialog(password, false)) return;
             password.Date = DateTime.Now;
             RowItem.SetProperties(password);
             try
