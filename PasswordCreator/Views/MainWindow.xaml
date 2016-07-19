@@ -50,7 +50,7 @@
         <Label   Grid.Column="0" Grid.Row="1" Content="検索キーワード" 
                  HorizontalAlignment="Right" />
         <TextBox Grid.Column="1" Grid.Row="1" 
-                 Text="{Binding Path=Keyword, ValidatesOnDataErrors=True,
+                 Text="{Binding Path=Keyword, ValidatesOnDataErrors=True, Delay=200,
                 UpdateSourceTrigger=PropertyChanged}"/>
         <Button Grid.Column="2" Grid.Row="1" Content="×"
                 Width="15" Height="15" HorizontalAlignment="Left" FontSize="8"

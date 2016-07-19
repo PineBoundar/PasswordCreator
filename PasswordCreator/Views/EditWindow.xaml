@@ -86,12 +86,9 @@
         </TextBox>
 
         <Label Content="その他" Grid.Column="0" Grid.Row="4"/>
-        <TextBox Grid.Column="1" Grid.Row="4"
+        <TextBox Grid.Column="1" Grid.Row="4" AcceptsReturn="True"
                  Text="{Binding Path=Note, ValidatesOnDataErrors=True,
                         UpdateSourceTrigger=PropertyChanged}">
-            <TextBox.InputBindings>
-                <KeyBinding Command="{Binding Path=OkCommand}" Key="Enter" />
-            </TextBox.InputBindings>
         </TextBox>
 
         <Label Content="分類項目" Grid.Column="0" Grid.Row="5"/>
